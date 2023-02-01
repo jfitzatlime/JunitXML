@@ -62,9 +62,9 @@ namespace JunitXML
         // destructor
         public void Close()
         {
-            // 02 Write the testsuite element
+            // Close the testsuite element
             xm.WriteEndElement();
-            // 01 Write the root element
+            // Close the root element
             xm.WriteEndElement();
             // Close the XML document
             xm.WriteEndDocument();
@@ -109,6 +109,13 @@ namespace JunitXML
         )
         {
             logTestResult (strTestCaseName, strStatus, strMessage, "");
+        }
+
+        public void logTestResult(string strTestCaseName,
+                        string strStatus
+        )
+        {
+            logTestResult (strTestCaseName, strStatus, "", "");
         }
 
     }
